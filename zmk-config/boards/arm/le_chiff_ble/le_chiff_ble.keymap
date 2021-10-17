@@ -25,16 +25,16 @@
 		default {
             label = "Qwerty";
 //  _____________________________       _____________________________
-// /  Q  |  W  |  E  |  R  |  T  \     /  Y  |  U  |  I  |  O  |  P  \
+// /  Q  |  W  |  F  |  P  |  B  \     /  Y  |  U  |  I  |  O  |  P  \
 // |  A  |  S  |  D  |  F  |  G  | ___ |  H  |  J  |  K  |  L  |  ;  |
 // |Sft/Z|  X  |  C  |  V  |  B  ||MUT||  N  |  M  |  ,  |  .  |Sft//|
 //         \LAlt/Bspc|  Ctl/SPC  /     \  Num/Del  | Sym/Ent /
 //          ---------------------       --------------------
 			bindings = <
-            &kp Q       &kp W   &kp E   &kp R   &kp T                   &kp Y   &kp U   &kp I       &kp O   &kp P
-            &kp A       &kp S   &kp D   &kp F   &kp G                   &kp H   &kp J   &kp K       &kp L   &kp SEMI
-            &mt LSHFT Z &kp X   &kp C   &kp V   &kp B   &kp C_MUTE      &kp N   &kp M   &kp COMMA   &kp DOT &mt RSHFT FSLH
-                        &mt LALT BSPC   &mt LCTRL SPACE                 &lt 1 RET       &lt 2 DEL
+            &kp Q       &kp W   	 &kp F   		&kp P   	  &kp B                       &kp J   	  &kp L   		&kp U       &kp Y   	&kp SEMI
+            &mt LWIN A  &mt RALT R   &mt LSHFT S   	&mt LCTRL T   &kp G                   	  &kp M   	  &mt RCTRL N   &mt RSHFT E &mt RALT I  &mt RWIN O
+            &kp Z       &kp X   	 &kp C   		&kp D   	  &kp V     &kp C_MUTE        &kp K   	  &kp H   		&kp COMMA   &kp DOT 	&kp FSLH
+                        							&mt 3 BSPC    &lt 1 RET                   &lt 2 SPACE &mt RALT DEL
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
 		};
@@ -47,10 +47,10 @@
 //         \  LAlt   |    Ctl    /     \   Trns    |         /
 //          ---------------------       --------------------
 			bindings = <
-            &kp N1      &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0
-            &kp TAB &bt BT_PRV &bt BT_NXT &kp C_VOL_DN &kp C_VOL_UP &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp SQT
-            &kp LSHFT &bt BT_SEL 0 &bt BT_CLR &kp C_MUTE &none &none &kp HOME &kp END &kp PG_UP &kp PG_DN &kp RSHFT
-            &kp LALT &kp LCTRL &trans &none
+            &kp N1      	&kp N2 			&kp N3 			&kp N4 			&kp N5 					&kp N6 		&kp N7 			&kp N8 			&kp N9 			&kp N0
+            &mt LWIN EXCL   &mt RALT AT		&mt LSHFT HASH 	&mt LCTRL MINUS	&kp PERCENT 			&kp EQUAL 	&mt RCTRL PLUS 	&mt RSHFT STAR	&mt RALT BSLH 	&mt RWIN DQT
+            &kp TILDE 		&kp GRAVE 		&kp LBRC 		&kp LBKT 		&kp LPAR 		&none 	&kp RPAR 	&kp RBKT 		&kp RBRC 		&none	 		&kp APOS
+            												&trans 			&trans 					&trans 		&trans
 			>;
 			sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
 		};
@@ -63,12 +63,31 @@
 //         \  LAlt   |    Ctl    /     \           | Trns    /
 //          ---------------------       --------------------
 			bindings = <
-            &kp ESC &kp F1 &kp F2 &kp F3 &kp F4 &out OUT_USB &out OUT_BLE &none  &kp EQUAL &kp MINUS
-            &none &kp F5 &kp F6 &kp F7 &kp F8 &kp LBKT &kp RBKT &none &kp GRAVE &kp BSLH
-            &kp LSHFT &kp F9 &kp F10 &kp F11 &kp F12 &none &none &none &reset &bootloader &kp RSHFT
-            &kp LALT &kp LCTRL &none &trans
+            &bt BT_CLR 	&kp F1 		&kp F2  	&kp F3 		&kp F4 				&out OUT_USB 	&out OUT_BLE 	&none  		&kp EQUAL 		&kp MINUS
+            &bt BT_NXT 	&kp F5 		&kp F6  	&kp F7 		&kp F8 				&kp LBKT 		&kp RBKT 		&none 		&kp GRAVE 		&kp BSLH
+            &bt BT_PRV 	&kp F9 		&kp F10 	&kp F11 	&kp F12 	&none 	&none 			&none 			&none 		&none		 	&kp RSHFT
+            									&trans	 	&trans	 			&trans 			&trans
 			>;
-			sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
+			sensor-bindings = <&inc_dec_kp LC(Z) LC(Y)>;
+		};
+		nav {
+            label = "Navi'i";
+//  _____________________________       _____________________________
+// / ESC | F1  | F2  | F3  | F4  \     / USB | BLE |     |  =  |  -  \
+// |     | F5  | F6  | F7  | F8  | ___ |  [  |  ]  |     |  `  |  \  |
+// | Sft | F9  | F10 | F11 | F12 ||   ||     |     |     |     | Sft |
+//         \  LAlt   |    Ctl    /     \           | Trns    /
+//          ---------------------       --------------------
+			bindings = <
+            &none 	&kp C_PREV 	&kp UP  	&kp C_NEXT 		&kp HOME			&none 			&none		 	&none  		&none 		&none
+            &none 	&kp LEFT 	&kp DOWN  	&kp RIGHT 		&kp END				&none 			&none	 		&none 		&none 		&none
+            &none 	&none 		&kp C_PP 	&none	 		&none	 	&none 	&none 			&none 			&reset 		&bootloader &none
+            								&trans 			&trans 				&trans 			&trans
+			>;
+			sensor-bindings = <&inc_dec_kp LC(Z) LC(Y)>;
 		};
 	};
 };
+
+
+Combos I need: ESC, TAB, ALT+TAB, PAUSE MUSIC, NEXT MUSIC, SEND TO SCREEN LEFT, EXCL, apostrophe, quotes
