@@ -11,7 +11,7 @@
 
 // makes it possible to hold backspace
 &mt {
-    quick_tap_ms = <200>;
+    quick_tap_ms = <250>;
 };
 
 &lt {
@@ -34,7 +34,7 @@
             &kp Q       &kp W   	 &kp F   		&kp P   	  &kp B                       &kp J   	  &kp L   		&kp U       &kp Y   	&kp SEMI
             &mt LWIN A  &mt RALT R   &mt LSHFT S   	&mt LCTRL T   &kp G                   	  &kp M   	  &mt RCTRL N   &mt RSHFT E &mt RALT I  &mt RWIN O
             &kp Z       &kp X   	 &kp C   		&kp D   	  &kp V     &kp C_MUTE        &kp K   	  &kp H   		&kp COMMA   &kp DOT 	&kp FSLH
-                        							&lt 3 BSPC    &lt 1 RET                   &lt 2 SPACE &mt RALT DEL
+                        							&lt 3 DEL    &lt 1 RET                   &lt 2 SPACE &mt RALT BSPC
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
 		};
@@ -109,7 +109,7 @@
 		};
 		combo_exclamation {
 			timeout-ms = <50>;            
-			key-positions = <3 4>;            
+			key-positions = <2 3>;            
 			bindings = <&kp EXCLAMATION>; 
 		};
 		combo_quotes {
