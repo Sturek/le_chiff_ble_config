@@ -12,7 +12,7 @@
 // makes it possible to hold backspace
 
 
-&mt {
+
     behaviors {        
     	hm: homerow_mods {            
    		compatible = "zmk,behavior-hold-tap";            
@@ -24,11 +24,9 @@
     		bindings = <&kp>, <&kp>;        
     	};    
     };
-};
 
-&lt {
-    quick_tap_ms = <200>;
-};
+
+
 
 / {
 	keymap {
