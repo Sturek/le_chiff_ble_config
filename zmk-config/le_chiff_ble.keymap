@@ -18,7 +18,7 @@
    		compatible = "zmk,behavior-hold-tap";            
     		label = "HOMEROW_MODS";            
     		#binding-cells = <2>;            
-    		tapping-term-ms = <700>;            
+    		tapping-term-ms = <1000>;            
     		quick_tap_ms = <0>;            
     		flavor = "balanced";            
     		bindings = <&kp>, <&kp>;        
@@ -114,7 +114,7 @@
 		};
 		combo_alt-tab {
 			timeout-ms = <50>;            
-			key-positions = <12 14>;            
+			key-positions = <12 23>;            
 			bindings = <&kp LA(TAB)>; 
 		};
 		combo_exclamation {
@@ -124,12 +124,12 @@
 		};
 		combo_quotes {
 			timeout-ms = <50>;            
-			key-positions = <15 17>;            
+			key-positions = <26 17>;            
 			bindings = <&kp DOUBLE_QUOTES>; 
 		};  
 		combo_apostrophe {
 			timeout-ms = <50>;            
-			key-positions = <15 18>;            
+			key-positions = <26 18>;            
 			bindings = <&kp APOSTROPHE>; 
 		}; 
 		combo_pause {
