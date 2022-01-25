@@ -18,7 +18,7 @@
    		compatible = "zmk,behavior-hold-tap";            
     		label = "HOMEROW_MODS";            
     		#binding-cells = <2>;            
-    		tapping-term-ms = <200>;            
+    		tapping-term-ms = <150>;            
     		quick_tap_ms = <0>;            
     		flavor = "tap-preferred";            
     		bindings = <&kp>, <&kp>;        
@@ -41,9 +41,9 @@
 //         \LAlt/Bspc|  Ctl/SPC  /     \  Num/Del  | Sym/Ent /
 //          ---------------------       --------------------
 			bindings = <
-            &kp Q       &kp W   	 &kp F   		&kp P   	  &kp B                       &kp J   	  &kp L   		&kp U       &kp Y   	&kp SEMI
-            &hm LWIN A  &hm RALT R   &hm LSHFT S   	&hm LCTRL T   &kp G                   	  &kp M   	  &hm RCTRL N   &hm RSHFT E &hm RALT I  &hm RWIN O
-            &kp Z       &kp X   	 &kp C   		&kp D   	  &kp V     &kp C_MUTE        &kp K   	  &kp H   		&kp COMMA   &kp DOT 	&kp FSLH
+            &kp Q       &kp W   	 &kp F   		&kp P   	  &kp B                       &kp J   	  &kp L   		&kp U       &kp Y   	 &kp SEMI
+            &hm LWIN A  &hm RALT R   &hm LSHFT S   	&hm LCTRL T   &kp G                   	  &kp M   	  &hm RCTRL N   &hm RSHFT E &hm RALT I   &hm RWIN O
+            &kp Z       &hm LALT X   &kp C   		&kp D   	  &kp V     &kp C_MUTE        &kp K   	  &kp H   		&kp COMMA   &hm LALT DOT &kp FSLH
                         							&lt 3 DEL     &lt 1 RET                   &lt 2 SPACE &kp BSPC
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -58,8 +58,8 @@
 //          ---------------------       --------------------
 			bindings = <
             &kp N1      	&kp N2 			&kp N3 			&kp N4 			&kp N5 					&kp N6 		&kp N7 			&kp N8 			&kp N9 			&kp N0
-            &mt LWIN EXCL   &mt RALT AT		&mt LSHFT HASH 	&mt LCTRL MINUS	&kp PERCENT 			&kp EQUAL 	&mt RCTRL PLUS 	&mt RSHFT STAR	&mt RALT BSLH 	&mt RWIN DQT
-            &kp TILDE 		&kp GRAVE 		&kp LBRC 		&kp LBKT 		&kp LPAR 		&none 	&kp RPAR 	&kp RBKT 		&kp RBRC 		&none	 		&kp APOS
+            &hm LWIN EXCL   &hm RALT AT		&hm LSHFT HASH 	&hm LCTRL MINUS	&kp PERCENT 			&kp EQUAL 	&hm RCTRL PLUS 	&hm RSHFT STAR	&hm RALT BSLH 	&hm RWIN RA(RS(SEMI))
+            &kp TILDE 		&hm LALT GRAVE 	&kp LBKT 		&kp LPAR		&kp LBRC		&none 	&kp RBRC 	&kp RPAR		&kp RBKT		&hm LALT AMPS	&kp APOS
             												&trans 			&trans 					&trans 		&trans
 			>;
 			sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
@@ -73,10 +73,10 @@
 //         \  LAlt   |    Ctl    /     \         | Trns    /
 //          ---------------------       --------------------
 			bindings = <
-            &bt BT_CLR 	&kp F1 		&kp F2  	&kp F3 		&kp F4 				&out OUT_USB 	&out OUT_BLE 	&none  		&kp EQUAL 		&kp MINUS
-            &bt BT_NXT 	&kp F5 		&kp F6  	&kp F7 		&kp F8 				&kp LBKT 		&kp RBKT 		&none 		&kp GRAVE 		&kp BSLH
-            &bt BT_PRV 	&kp F9 		&kp F10 	&kp F11 	&kp F12 	&none 	&none 			&none 			&none 		&none		 	&kp RSHFT
-            									&trans	 	&trans	 			&trans 			&trans
+            &kp F1 			&kp F2			  &kp F3  		  &kp F4 		&kp F5 				&kp F6 		 &kp F7 		&kp F8  		&kp F9 			&kp F10
+            &kp RA(LS(N1)) 	&kp RA(LS(N2)) 	  &kp RA(LS(N3))  &kp RA(N7) 	&kp RA(N6) 			&kp LS(N4) 	 &kp RA(N5) 	&kp AMPS		&kp PIPE 		&kp CARET
+            &bt RA(N8) 		&kp RA(LS(EQUAL)) &kp RA(LS(N4))  &none 	    &kp RA(LBKT) &none 	&kp RA(RBKT) &none 			&kp RA(MINUS) 	&none		 	&kp RA(LS(SLASH))
+            												  &trans	 	&trans	 			&trans 		 &trans
 			>;
 			sensor-bindings = <&inc_dec_kp LC(Z) LC(Y)>;
 		};
@@ -89,10 +89,10 @@
 //          \   31   |    32     /     \     33      | 34    /
 //          ---------------------       --------------------
 			bindings = <
-            &none 	&kp C_PREV 	&kp UP  	&kp C_NEXT 		&kp HOME			&none 			&none		 	&none  		&none 		&none
-            &none 	&kp LEFT 	&kp DOWN  	&kp RIGHT 		&kp END				&none 			&none	 		&none 		&none 		&none
-            &none 	&none 		&kp C_PP 	&none	 		&none	 	&none 	&none 			&none 			&reset 		&bootloader &none
-            								&trans 			&trans 				&trans 			&trans
+            &bt BT_CLR 	&kp C_PREV 	&kp UP  	&kp C_NEXT 		&kp C_VOL_UP		&out OUT_USB    &out OUT_BLE  	&none  		&kp F11 	&kp F12
+            &bt BT_NXT 	&kp LEFT 	&kp DOWN  	&kp RIGHT 		&kp C_VOL_DN		&none 			&kp HOME 		&kp PG_UP	&kp PG_DN	&kp END
+            &bt BT_PRV 	&none 		&kp C_PP 	&none	 		&kp C_MUTE	 &none 	&bootloader		&none 			&none 		&none		&reset
+            									&trans 			&trans 				&trans 			&trans
 			>;
 			sensor-bindings = <&inc_dec_kp LC(Z) LC(Y)>;
 		};
@@ -136,6 +136,21 @@
 			timeout-ms = <50>;            
 			key-positions = <22 23>;            
 			bindings = <&kp C_PP>; 
-		};           
+		};
+		combo_ue {
+			timeout-ms = <50>;
+			key-positions = <15 16>;
+			bindings = <&kp RA(Y)>
+		};
+		combo_ae {
+			timeout-ms = <50>;
+			key-positions = <11 12>;
+			bindings = <&kp RA(Q)>
+		};
+		combo_oe {
+			timeout-ms = <50>;
+			key-positions = <16 17>;
+			bindings = <&kp RA(P)>
+		};                
 	};
 };
