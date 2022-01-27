@@ -140,17 +140,17 @@
 		combo_ue {
 			timeout-ms = <50>;
 			key-positions = <15 16>;
-			bindings = <&kp RA(Y)>
+			bindings = <&kp RA(Y)>;
 		};
 		combo_ae {
 			timeout-ms = <50>;
 			key-positions = <11 12>;
-			bindings = <&kp RA(Q)>
+			bindings = <&kp RA(Q)>;
 		};
 		combo_oe {
 			timeout-ms = <50>;
 			key-positions = <16 17>;
-			bindings = <&kp RA(P)>
+			bindings = <&kp RA(P)>;
 		};                
 	};
 };
