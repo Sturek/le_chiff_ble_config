@@ -75,7 +75,7 @@
 			bindings = <
             &kp F1 			&kp F2			  &kp F3  		  &kp F4 		&kp F5 				&kp F6 		 &kp F7 		&kp F8  		&kp F9 			&kp F10
             &kp RA(LS(N1)) 	&kp RA(LS(N2)) 	  &kp RA(LS(N3))  &kp RA(N7) 	&kp RA(N6) 			&kp LS(N4) 	 &kp RA(N5) 	&kp AMPS		&kp PIPE 		&kp CARET
-            &bt RA(N8) 		&kp RA(LS(EQUAL)) &kp RA(LS(N4))  &none 	    &kp RA(LBKT) &none 	&kp RA(RBKT) &none 			&kp RA(MINUS) 	&none		 	&kp RA(LS(SLASH))
+            &kp RA(N8) 		&kp RA(LS(EQUAL)) &kp RA(LS(N4))  &none 	    &kp RA(LBKT) &none 	&kp RA(RBKT) &none 			&kp RA(MINUS) 	&none		 	&kp RA(LS(SLASH))
             												  &trans	 	&trans	 			&trans 		 &trans
 			>;
 			sensor-bindings = <&inc_dec_kp LC(Z) LC(Y)>;
