@@ -33,7 +33,7 @@
 		compatible = "zmk,keymap";
 		
 		default {
-            label = "Qwerty";
+            label = "Home";
 //  _____________________________       _____________________________
 // /  Q  |  W  |  F  |  P  |  B  \     /  Y  |  U  |  I  |  O  |  P  \
 // |  A  |  S  |  D  |  F  |  G  | ___ |  H  |  J  |  K  |  L  |  ;  |
@@ -41,8 +41,8 @@
 //         \LAlt/Bspc|  Ctl/SPC  /     \  Num/Del  | Sym/Ent /
 //          ---------------------       --------------------
 			bindings = <
-            &kp Q       &kp W   	 &kp F   		&kp P   	  &kp B                       &kp J   	  &kp L   		&kp U       &kp Y   	 &kp SEMI
-            &hm LWIN A  &hm RALT R   &hm LSHFT S   	&hm LCTRL T   &kp G                   	  &kp M   	  &hm RCTRL N   &hm RSHFT E &hm RALT I   &hm RWIN O
+            &kp Q       &hm RALT W   	 &kp F   		&kp P   	  &kp B                       &kp J   	  &kp L   		&kp U        &hm RALT Y   	 &kp SEMI
+            &hm LWIN A  &lt 4 R   &hm LSHFT S   	&hm LCTRL T   &kp G                   	  &kp M   	  &hm RCTRL N   &hm RSHFT E &lt 4 I   &hm RWIN O
             &kp Z       &hm LALT X   &kp C   		&kp D   	  &kp V     &kp C_MUTE        &kp K   	  &kp H   		&kp COMMA   &hm LALT DOT &kp FSLH
                         							&lt 3 DEL     &lt 1 RET                   &lt 2 SPACE &kp BSPC
 			>;
@@ -91,11 +91,28 @@
 			bindings = <
             &bt BT_CLR 	&kp C_PREV 	&kp UP  	&kp C_NEXT 		&kp C_VOL_UP		&out OUT_USB    &out OUT_BLE  	&none  		&kp F11 	&kp F12
             &bt BT_NXT 	&kp LEFT 	&kp DOWN  	&kp RIGHT 		&kp C_VOL_DN		&none 			&kp HOME 		&kp PG_UP	&kp PG_DN	&kp END
-            &bt BT_PRV 	&none 		&kp C_PP 	&none	 		&kp C_MUTE	 &none 	&bootloader		&none 			&none 		&none		&reset
+            &bt BT_PRV 	&none 		&kp C_PP 	&none	 		&kp C_MUTE	 &none 	&bootloader		&none			&none 		&none		&reset
             									&trans 			&trans 				&trans 			&trans
 			>;
 			sensor-bindings = <&inc_dec_kp LC(Z) LC(Y)>;
 		};
+		umlaut {
+            label = "Umlauts";
+//  _____________________________       _____________________________
+// /  Q  |  W  |  F  |  P  |  B  \     /  Y  |  U  |  I  |  O  |  P  \
+// |  A  |  S  |  D  |  F  |  G  | ___ |  H  |  J  |  K  |  L  |  ;  |
+// |Sft/Z|  X  |  C  |  V  |  B  ||MUT||  N  |  M  |  ,  |  .  |Sft//|
+//         \LAlt/Bspc|  Ctl/SPC  /     \  Num/Del  | Sym/Ent /
+//          ---------------------       --------------------
+			bindings = <
+            &kp RA(Q)       &hm RALT W   	 &kp F   		&kp RA(P)   	  &kp B                       &kp J   	  &kp L   		&kp RA(Y)        &hm RALT RA(Y)   	 &kp SEMI
+            &hm LWIN RA(Q)  &kp R   &hm LSHFT RA(S)   	&hm LCTRL T   &kp G                   	  &kp M   	  &hm RCTRL N   &hm RSHFT E &kp I   &hm RWIN RA(P)
+            &kp Z       &hm LALT X   &kp C   		&kp D   	  &kp V     &kp C_MUTE        &kp K   	  &kp H   		&kp COMMA   &hm LALT DOT &kp FSLH
+                        							&lt 3 DEL     &lt 1 RET                   &lt 2 SPACE &kp BSPC
+			>;
+			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+		};
+		
 	};
 };
 
