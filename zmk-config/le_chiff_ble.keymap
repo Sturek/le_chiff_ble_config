@@ -129,10 +129,10 @@
 			key-positions = <0 10>;            
 			bindings = <&kp TAB>; 
 		};
-		combo_alt-tab {
+		combo_tab2 {
 			timeout-ms = <50>;            
-			key-positions = <12 23>;            
-			bindings = <&kp LA(TAB)>; 
+			key-positions = <22 23>;           
+			bindings = <&kp TAB>; 
 		};
 		combo_exclamation {
 			timeout-ms = <50>;            
